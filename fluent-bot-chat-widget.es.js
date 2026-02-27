@@ -259,7 +259,7 @@ function kr(e) {
   };
 }
 // @__NO_SIDE_EFFECTS__
-function Re(e) {
+function Me(e) {
   const t = /* @__PURE__ */ kr(e);
   return ec(t), t;
 }
@@ -3763,22 +3763,22 @@ Ve.getAdapter = Pc.getAdapter;
 Ve.HttpStatusCode = yu;
 Ve.default = Ve;
 const {
-  Axios: e_,
-  AxiosError: t_,
-  CanceledError: n_,
-  isCancel: r_,
-  CancelToken: i_,
-  VERSION: s_,
-  all: u_,
-  Cancel: o_,
-  isAxiosError: a_,
-  spread: c_,
-  toFormData: l_,
-  AxiosHeaders: d_,
-  HttpStatusCode: f_,
-  formToJSON: h_,
-  getAdapter: p_,
-  mergeConfig: b_
+  Axios: t_,
+  AxiosError: n_,
+  CanceledError: r_,
+  isCancel: i_,
+  CancelToken: s_,
+  VERSION: u_,
+  all: o_,
+  Cancel: a_,
+  isAxiosError: c_,
+  spread: l_,
+  toFormData: d_,
+  AxiosHeaders: f_,
+  HttpStatusCode: h_,
+  formToJSON: p_,
+  getAdapter: b_,
+  mergeConfig: g_
 } = Ve, Nh = Ve.create({
   baseURL: "https://staging.fluentbot.ai",
   headers: {
@@ -5263,7 +5263,7 @@ function Hh() {
             }
             function Kn() {
               for (var f = ["Pusher"], o = 0; o < arguments.length; o++)
-                typeof arguments[o] == "string" ? f.push(arguments[o]) : f.push(Oe(arguments[o]));
+                typeof arguments[o] == "string" ? f.push(arguments[o]) : f.push(Re(arguments[o]));
               return f.join(" : ");
             }
             function Rn(f, o) {
@@ -5277,19 +5277,19 @@ function Hh() {
                   return m;
               return -1;
             }
-            function Me(f, o) {
+            function Fe(f, o) {
               for (var l in f)
                 Object.prototype.hasOwnProperty.call(f, l) && o(f[l], l, f);
             }
             function Ot(f) {
               var o = [];
-              return Me(f, function(l, m) {
+              return Fe(f, function(l, m) {
                 o.push(m);
               }), o;
             }
             function Zn(f) {
               var o = [];
-              return Me(f, function(l) {
+              return Fe(f, function(l) {
                 o.push(l);
               }), o;
             }
@@ -5304,7 +5304,7 @@ function Hh() {
             }
             function yn(f, o) {
               var l = {};
-              return Me(f, function(m, x) {
+              return Fe(f, function(m, x) {
                 l[x] = o(m);
               }), l;
             }
@@ -5318,13 +5318,13 @@ function Hh() {
             }
             function Z(f, o) {
               var l = {};
-              return Me(f, function(m, x) {
+              return Fe(f, function(m, x) {
                 (o && o(m, x, f, l) || m) && (l[x] = m);
               }), l;
             }
             function ne(f) {
               var o = [];
-              return Me(f, function(l, m) {
+              return Fe(f, function(l, m) {
                 o.push([m, l]);
               }), o;
             }
@@ -5342,10 +5342,10 @@ function Hh() {
             }
             function be(f) {
               return yn(f, function(o) {
-                return typeof o == "object" && (o = Oe(o)), encodeURIComponent(_e(o.toString()));
+                return typeof o == "object" && (o = Re(o)), encodeURIComponent(_e(o.toString()));
               });
             }
-            function Fe(f) {
+            function Oe(f) {
               var o = Z(f, function(m) {
                 return m !== void 0;
               }), l = Mn(ne(be(o)), $e.method("join", "=")).join("&");
@@ -5378,7 +5378,7 @@ function Hh() {
                 }
               }(f, "$");
             }
-            function Oe(f) {
+            function Re(f) {
               try {
                 return JSON.stringify(f);
               } catch {
@@ -5450,7 +5450,7 @@ function Hh() {
               }
               send(o) {
                 if (!this.request) {
-                  var l = Fe(this.data), m = this.url + "/" + o.number + "?" + l;
+                  var l = Oe(this.data), m = this.url + "/" + o.number + "?" + l;
                   this.request = ue.createScriptRequest(m), this.request.send(o);
                 }
               }
@@ -5876,11 +5876,11 @@ function Hh() {
                     l(), m && m.code && this.handleCloseEvent(m), this.transport = null, this.emit("closed");
                   }
                 }, l = () => {
-                  Me(o, (m, x) => {
+                  Fe(o, (m, x) => {
                     this.transport.unbind(x, m);
                   });
                 };
-                Me(o, (m, x) => {
+                Fe(o, (m, x) => {
                   this.transport.bind(x, m);
                 });
               }
@@ -6012,7 +6012,7 @@ function Hh() {
                 } : null;
               }
               each(o) {
-                Me(this.members, (l, m) => {
+                Fe(this.members, (l, m) => {
                   o(this.get(m));
                 });
               }
@@ -6364,7 +6364,7 @@ function Hh() {
                 return delete this.channels[o], l;
               }
               disconnect() {
-                Me(this.channels, function(o) {
+                Fe(this.channels, function(o) {
                   o.disconnect();
                 });
               }
@@ -6563,7 +6563,7 @@ function Hh() {
               var x = ue.getLocalStorage();
               if (x)
                 try {
-                  x[kt(f)] = Oe({
+                  x[kt(f)] = Re({
                     timestamp: $e.now(),
                     transport: o,
                     latency: l,
@@ -7082,7 +7082,7 @@ function Hh() {
                 }, xe = function() {
                   Ee();
                   var Qe;
-                  Qe = Oe(x), l(new D(Qe));
+                  Qe = Re(x), l(new D(Qe));
                 }, Ee = function() {
                   x.unbind("initialized", q), x.unbind("open", Y), x.unbind("error", re), x.unbind("closed", xe);
                 };
@@ -12180,22 +12180,22 @@ function rg() {
     function R(B, M) {
       N && (M = M.map((I) => I.toLowerCase())), M.forEach(function(I) {
         const $ = I.split("|");
-        X[$[0]] = [B, Fe($[0], $[1])];
+        X[$[0]] = [B, Oe($[0], $[1])];
       });
     }
   }
-  function Fe(k, N) {
+  function Oe(k, N) {
     return N ? Number(N) : Le(k) ? 0 : 1;
   }
   function Le(k) {
     return ve.includes(k.toLowerCase());
   }
-  const Oe = {}, Xe = (k) => {
+  const Re = {}, Xe = (k) => {
     console.error(k);
   }, ce = (k, ...N) => {
     console.log(`WARN: ${k}`, ...N);
   }, Ge = (k, N) => {
-    Oe[`${k}/${N}`] || (console.log(`Deprecated as of ${k}. ${N}`), Oe[`${k}/${N}`] = !0);
+    Re[`${k}/${N}`] || (console.log(`Deprecated as of ${k}. ${N}`), Re[`${k}/${N}`] = !0);
   }, ut = new Error();
   function Rt(k, N, { key: z }) {
     let X = 0;
@@ -17410,7 +17410,7 @@ const r2 = {
 };
 function i2(e, t) {
   ar(t, !0), gi(e, r2);
-  const n = fn(t, "enableHumanEscalation", 3, !1), r = fn(t, "escalationButtonText", 3, "Talk to a human"), i = /* @__PURE__ */ Re(() => t.message.content), s = /* @__PURE__ */ Re(() => t.message.role), u = /* @__PURE__ */ Re(() => !!t.message.isStreaming), a = /* @__PURE__ */ Re(() => !!t.message.hasReceivedFirstEvent), c = /* @__PURE__ */ Re(() => C(u) && !C(a)), d = /* @__PURE__ */ Re(() => t.message.escalationMessageStatus), h = /* @__PURE__ */ Re(() => C(s) === "human" && !!C(d)), p = /* @__PURE__ */ Re(() => t.message.sources), g = /* @__PURE__ */ Re(() => C(s) === "agent"), _ = /* @__PURE__ */ Re(() => t.message.agentInfo), b = /* @__PURE__ */ Re(() => C(_)?.name || "Agent"), w = /* @__PURE__ */ Re(() => n() && t.message.showEscalationButton && !C(u)), v = /* @__PURE__ */ Re(() => C(s) !== "human" && !!t.message.showEmailCaptureButton && !C(u)), E = { Bot: Cu, BotMessageSquare: ul, Sparkle: ol, Sparkles: al }, y = t.botIcon && (t.botIcon.startsWith("http://") || t.botIcon.startsWith("https://")), S = !y && t.botIcon && E[t.botIcon] ? E[t.botIcon] : Cu, D = /* @__PURE__ */ Re(() => C(s) === "ai" || C(s) === "agent" ? kg(C(i)) : C(i));
+  const n = fn(t, "enableHumanEscalation", 3, !1), r = fn(t, "escalationButtonText", 3, "Talk to a human"), i = /* @__PURE__ */ Me(() => t.message.content), s = /* @__PURE__ */ Me(() => t.message.role), u = /* @__PURE__ */ Me(() => !!t.message.isStreaming), a = /* @__PURE__ */ Me(() => !!t.message.hasReceivedFirstEvent), c = /* @__PURE__ */ Me(() => C(u) && !C(a)), d = /* @__PURE__ */ Me(() => t.message.escalationMessageStatus), h = /* @__PURE__ */ Me(() => C(s) === "human" && !!C(d)), p = /* @__PURE__ */ Me(() => t.message.sources), g = /* @__PURE__ */ Me(() => C(s) === "agent"), _ = /* @__PURE__ */ Me(() => t.message.agentInfo), b = /* @__PURE__ */ Me(() => C(_)?.name || "Agent"), w = /* @__PURE__ */ Me(() => n() && t.message.showEscalationButton && !C(u)), v = /* @__PURE__ */ Me(() => C(s) !== "human" && !!t.message.showEmailCaptureButton && !C(u)), E = { Bot: Cu, BotMessageSquare: ul, Sparkle: ol, Sparkles: al }, y = t.botIcon && (t.botIcon.startsWith("http://") || t.botIcon.startsWith("https://")), S = !y && t.botIcon && E[t.botIcon] ? E[t.botIcon] : Cu, D = /* @__PURE__ */ Me(() => C(s) === "ai" || C(s) === "agent" ? kg(C(i)) : C(i));
   let A = /* @__PURE__ */ Se(null), T = /* @__PURE__ */ Se(!1), P = /* @__PURE__ */ Se("");
   function j(Z) {
     try {
@@ -17423,18 +17423,18 @@ function i2(e, t) {
   function J(Z) {
     const ve = Z.target?.closest?.(".copy-code");
     if (!ve) return;
-    const Pe = ve.getAttribute("data-code") || "", be = ve.querySelector(".copy-label"), Fe = be ? be.textContent : "";
+    const Pe = ve.getAttribute("data-code") || "", be = ve.querySelector(".copy-label"), Oe = be ? be.textContent : "";
     navigator?.clipboard?.writeText && navigator.clipboard.writeText(Pe).then(() => {
       be && (be.textContent = "Copied"), setTimeout(
         () => {
-          be && (be.textContent = Fe || "Copy Code");
+          be && (be.textContent = Oe || "Copy Code");
         },
         1500
       );
     }).catch(() => {
       be && (be.textContent = "Failed"), setTimeout(
         () => {
-          be && (be.textContent = Fe || "Copy Code");
+          be && (be.textContent = Oe || "Copy Code");
         },
         1500
       );
@@ -17457,14 +17457,14 @@ function i2(e, t) {
     var ke = (Z) => {
       var ne = zm(), ve = G(ne);
       {
-        var Pe = (Fe) => {
+        var Pe = (Oe) => {
           var Le = Lm();
           de(() => {
             Ke(Le, "src", C(_).avatar), Ke(Le, "alt", C(_).name);
-          }), W(Fe, Le);
-        }, be = (Fe, Le) => {
+          }), W(Oe, Le);
+        }, be = (Oe, Le) => {
           {
-            var Oe = (ce) => {
+            var Re = (ce) => {
               var Ge = Bm(), ut = G(Ge);
               de((Rt) => bt(ut, Rt), [
                 () => C(_).name.charAt(0).toUpperCase()
@@ -17504,16 +17504,16 @@ function i2(e, t) {
               }
             };
             fe(
-              Fe,
+              Oe,
               (ce) => {
-                C(g) && C(_)?.name ? ce(Oe) : ce(Xe, !1);
+                C(g) && C(_)?.name ? ce(Re) : ce(Xe, !1);
               },
               Le
             );
           }
         };
-        fe(ve, (Fe) => {
-          C(g) && C(_)?.avatar ? Fe(Pe) : Fe(be, !1);
+        fe(ve, (Oe) => {
+          C(g) && C(_)?.avatar ? Oe(Pe) : Oe(be, !1);
         });
       }
       de(() => {
@@ -17542,11 +17542,11 @@ function i2(e, t) {
     }, st = (Z, ne) => {
       {
         var ve = (be) => {
-          var Fe = Hm();
-          W(be, Fe);
+          var Oe = Hm();
+          W(be, Oe);
         }, Pe = (be) => {
-          var Fe = Ym(), Le = Ie(Fe), Oe = G(Le);
-          Ld(Oe, () => C(D)), Xr(Le, (Ge) => H(te, Ge), () => C(te));
+          var Oe = Ym(), Le = Ie(Oe), Re = G(Le);
+          Ld(Re, () => C(D)), Xr(Le, (Ge) => H(te, Ge), () => C(te));
           var Xe = ie(Le, 2);
           {
             var ce = (Ge) => {
@@ -17574,7 +17574,7 @@ function i2(e, t) {
               t.showSources && C(p) && C(p).length > 0 && Ge(ce);
             });
           }
-          de(() => Qt(Le, 1, `message-markdown markdown ${C(u) ? "typing-animation" : ""}`, "svelte-n075sr")), W(be, Fe);
+          de(() => Qt(Le, 1, `message-markdown markdown ${C(u) ? "typing-animation" : ""}`, "svelte-n075sr")), W(be, Oe);
         };
         fe(
           Z,
@@ -17601,12 +17601,12 @@ function i2(e, t) {
   }
   var De = ie(On, 2), Kn = G(De), Rn = ie(De, 2);
   {
-    var Me = (Z) => {
+    var Fe = (Z) => {
       var ne = Jm(), ve = G(ne);
       {
         var Pe = (Le) => {
-          var Oe = Zm();
-          Oe.__click = [
+          var Re = Zm();
+          Re.__click = [
             Fm,
             A,
             j,
@@ -17614,10 +17614,10 @@ function i2(e, t) {
             T,
             P
           ];
-          var Xe = G(Oe);
+          var Xe = G(Re);
           gp(Xe, { size: 14 }), de(() => {
-            Qt(Oe, 1, `feedback-btn up ${C(A) === "up" ? "selected" : ""}`, "svelte-n075sr"), Ke(Oe, "aria-pressed", C(A) === "up");
-          }), W(Le, Oe);
+            Qt(Re, 1, `feedback-btn up ${C(A) === "up" ? "selected" : ""}`, "svelte-n075sr"), Ke(Re, "aria-pressed", C(A) === "up");
+          }), W(Le, Re);
         };
         fe(ve, (Le) => {
           C(A) !== "down" && Le(Pe);
@@ -17625,9 +17625,9 @@ function i2(e, t) {
       }
       var be = ie(ve, 2);
       {
-        var Fe = (Le) => {
-          var Oe = Xm();
-          Oe.__click = [
+        var Oe = (Le) => {
+          var Re = Xm();
+          Re.__click = [
             Nm,
             A,
             T,
@@ -17635,27 +17635,27 @@ function i2(e, t) {
             j,
             t
           ];
-          var Xe = G(Oe);
+          var Xe = G(Re);
           bp(Xe, { size: 14 }), de(() => {
-            Qt(Oe, 1, `feedback-btn down ${C(A) === "down" ? "selected" : ""}`, "svelte-n075sr"), Ke(Oe, "aria-pressed", C(A) === "down");
-          }), W(Le, Oe);
+            Qt(Re, 1, `feedback-btn down ${C(A) === "down" ? "selected" : ""}`, "svelte-n075sr"), Ke(Re, "aria-pressed", C(A) === "down");
+          }), W(Le, Re);
         };
         fe(be, (Le) => {
-          C(A) !== "up" && Le(Fe);
+          C(A) !== "up" && Le(Oe);
         });
       }
       W(Z, ne);
     };
     fe(Rn, (Z) => {
-      (C(s) === "ai" || C(g)) && t.message.id && Z(Me);
+      (C(s) === "ai" || C(g)) && t.message.id && Z(Fe);
     });
   }
   var Ot = ie(zt, 2);
   {
     var Zn = (Z) => {
       var ne = Qm();
-      ne.__click = function(...Fe) {
-        t.onEscalationClick?.apply(this, Fe);
+      ne.__click = function(...Oe) {
+        t.onEscalationClick?.apply(this, Oe);
       };
       var ve = G(ne);
       cl(ve, { size: 16 });
@@ -17687,22 +17687,22 @@ function i2(e, t) {
     var Fn = (Z) => {
       var ne = t2(), ve = G(ne), Pe = ie(G(ve), 2);
       Ke(Pe, "rows", 5);
-      var be = ie(Pe, 2), Fe = G(be);
-      Fe.__click = [
+      var be = ie(Pe, 2), Oe = G(be);
+      Oe.__click = [
         Pm,
         j,
         t,
         T,
         P
       ];
-      var Le = ie(Fe, 2);
+      var Le = ie(Oe, 2);
       Le.__click = [
         Im,
         j,
         t,
         P,
         T
-      ], pu(Pe, () => C(P), (Oe) => H(P, Oe)), W(Z, ne);
+      ], pu(Pe, () => C(P), (Re) => H(P, Re)), W(Z, ne);
     };
     fe(yn, (Z) => {
       C(T) && Z(Fn);
@@ -17776,14 +17776,14 @@ const l2 = (e, t, n) => {
 }, d2 = (e, t, n) => {
   H(t, !0), H(n, null);
 };
-var f2 = /* @__PURE__ */ ae('<div class="error-banner svelte-1ni34yq"><span class="error-text svelte-1ni34yq"> </span> <button type="button" class="error-dismiss svelte-1ni34yq" aria-label="Dismiss error">✕</button></div>'), h2 = /* @__PURE__ */ ae('<div class="loading-more svelte-1ni34yq"><div class="loading-spinner svelte-1ni34yq"></div> <span>Loading previous messages...</span></div>'), p2 = /* @__PURE__ */ ae('<div class="date-separator svelte-1ni34yq"><div class="date-separator-line svelte-1ni34yq"></div> <span class="date-separator-label svelte-1ni34yq"> </span> <div class="date-separator-line svelte-1ni34yq"></div></div>'), b2 = (e, t, n) => t(C(n)), g2 = /* @__PURE__ */ ae('<button type="button" class="quick-question svelte-1ni34yq"> </button>'), m2 = /* @__PURE__ */ ae('<div class="quick-questions svelte-1ni34yq"><!> <div class="ai-disclaimer svelte-1ni34yq">Responses are generated using AI and may contain mistakes.</div></div>'), _2 = /* @__PURE__ */ ae('<p class="email-capture-error svelte-1ni34yq"> </p>'), v2 = /* @__PURE__ */ ae('<div class="email-capture-overlay svelte-1ni34yq"><div class="email-capture-box svelte-1ni34yq"><h3 class="svelte-1ni34yq">What is your email address?</h3> <p class="svelte-1ni34yq">Enter your email to know when we reply.</p> <input type="email" class="email-capture-input svelte-1ni34yq" placeholder="Enter your email address..."> <!> <div class="email-capture-actions svelte-1ni34yq"><button type="button" class="email-capture-save svelte-1ni34yq"> </button> <button type="button" class="email-capture-skip svelte-1ni34yq">Skip</button></div></div></div>'), x2 = /* @__PURE__ */ ae('<button type="button" class="email-reminder-banner svelte-1ni34yq">🔔 Click to set your email to get notifications.</button>'), y2 = (e, t) => {
+var f2 = /* @__PURE__ */ ae('<div class="error-banner svelte-1ni34yq"><span class="error-text svelte-1ni34yq"> </span> <button type="button" class="error-dismiss svelte-1ni34yq" aria-label="Dismiss error">✕</button></div>'), h2 = /* @__PURE__ */ ae('<div class="loading-more svelte-1ni34yq"><div class="loading-spinner svelte-1ni34yq"></div> <span>Loading previous messages...</span></div>'), p2 = /* @__PURE__ */ ae('<div class="date-separator svelte-1ni34yq"><div class="date-separator-line svelte-1ni34yq"></div> <span class="date-separator-label svelte-1ni34yq"> </span> <div class="date-separator-line svelte-1ni34yq"></div></div>'), b2 = (e, t, n) => t(C(n)), g2 = /* @__PURE__ */ ae('<button type="button" class="quick-question svelte-1ni34yq"> </button>'), m2 = /* @__PURE__ */ ae('<div class="quick-questions svelte-1ni34yq"><!> <div class="ai-disclaimer svelte-1ni34yq">Responses are generated using AI and may contain mistakes.</div></div>'), _2 = (e, t, n) => e.key === "Enter" && !C(t) && n(), v2 = /* @__PURE__ */ ae('<p class="email-capture-error svelte-1ni34yq"> </p>'), x2 = /* @__PURE__ */ ae('<div class="email-capture-overlay svelte-1ni34yq"><div class="email-capture-box svelte-1ni34yq"><h3 class="svelte-1ni34yq">What is your email address?</h3> <p class="svelte-1ni34yq">Enter your email to know when we reply.</p> <input type="email" class="email-capture-input svelte-1ni34yq" placeholder="Enter your email address..."> <!> <div class="email-capture-actions svelte-1ni34yq"><button type="button" class="email-capture-save svelte-1ni34yq"> </button> <button type="button" class="email-capture-skip svelte-1ni34yq">Skip</button></div></div></div>'), y2 = /* @__PURE__ */ ae('<button type="button" class="email-reminder-banner svelte-1ni34yq">🔔 Click to set your email to get notifications.</button>'), w2 = (e, t) => {
   e.stopPropagation(), H(t, !C(t));
-}, w2 = (e, t, n) => {
+}, k2 = (e, t, n) => {
   H(t, !1), n();
-}, k2 = /* @__PURE__ */ ae('<div class="attachment-menu svelte-1ni34yq"><button type="button" class="attachment-menu-item svelte-1ni34yq"><!> <span> </span></button></div>'), E2 = /* @__PURE__ */ ae('<div class="attachment-menu-wrapper svelte-1ni34yq"><button type="button" class="attachment-toggle svelte-1ni34yq"><!></button> <!></div>'), C2 = (e, t, n, r) => {
+}, E2 = /* @__PURE__ */ ae('<div class="attachment-menu svelte-1ni34yq"><button type="button" class="attachment-menu-item svelte-1ni34yq"><!> <span> </span></button></div>'), C2 = /* @__PURE__ */ ae('<div class="attachment-menu-wrapper svelte-1ni34yq"><button type="button" class="attachment-toggle svelte-1ni34yq"><!></button> <!></div>'), S2 = (e, t, n, r) => {
   ((s) => s && (s.length === 1 || s === "Backspace" || s === "Delete"))(e.key) && (H(t, !0), n()), e.key === "Enter" && (e.shiftKey || (e.preventDefault(), r()));
-}, S2 = /* @__PURE__ */ ae('<div class="branding svelte-1ni34yq">Powered by <a target="_blank" rel="noopener noreferrer" class="branding-link svelte-1ni34yq"></a></div>'), A2 = /* @__PURE__ */ ae('<div class="chat-container svelte-1ni34yq"><!> <div class="messages-container svelte-1ni34yq"><!> <!> <!> <div class="bottom-anchor"></div></div> <!> <!> <!> <form class="input-container svelte-1ni34yq"><!> <textarea class="message-input svelte-1ni34yq" rows="1"></textarea> <button type="submit" class="send-button svelte-1ni34yq" aria-label="Send message" title="Send"><!></button></form> <!></div>');
-const T2 = {
+}, A2 = /* @__PURE__ */ ae('<div class="branding svelte-1ni34yq">Powered by <a target="_blank" rel="noopener noreferrer" class="branding-link svelte-1ni34yq"></a></div>'), T2 = /* @__PURE__ */ ae('<div class="chat-container svelte-1ni34yq"><!> <div class="messages-container svelte-1ni34yq"><!> <!> <!> <div class="bottom-anchor"></div></div> <!> <!> <!> <form class="input-container svelte-1ni34yq"><!> <textarea class="message-input svelte-1ni34yq" rows="1"></textarea> <button type="submit" class="send-button svelte-1ni34yq" aria-label="Send message" title="Send"><!></button></form> <!></div>');
+const D2 = {
   hash: "svelte-1ni34yq",
   code: `.chat-container.svelte-1ni34yq {height:100%;display:flex;flex-direction:column;overflow:hidden;position:relative;}.messages-container.svelte-1ni34yq {flex:1;overflow-y:auto;
     /* Reduced horizontal padding (was 0.75rem) to tighten message list */padding:0.5rem 0.5rem;background-color:#f7f7f7;display:flex;flex-direction:column;width:100%;box-sizing:border-box;min-height:0; /* Important for flex container */}.quick-questions.svelte-1ni34yq {background-color:#f7f7f7;padding:0.25rem 0.75rem 0.5rem 0.75rem;display:flex;flex-direction:column;gap:0.15rem;}.date-separator.svelte-1ni34yq {display:flex;align-items:center;gap:0.5rem;padding:0.25rem 0;}.date-separator-line.svelte-1ni34yq {height:1px;flex:1;background-color:#e5e7eb;}.date-separator-label.svelte-1ni34yq {background-color:#ffffff;color:#6b7280;border-radius:9999px;font-size:0.75rem;line-height:1rem;padding:0.125rem 0.75rem;box-shadow:0 1px 2px rgba(0, 0, 0, 0.06);white-space:nowrap;}.quick-question.svelte-1ni34yq {background:transparent;border:none;padding:2px 0;text-align:left;font-size:0.7rem; /* ~11px similar to vue preview */font-weight:500;line-height:1.35;color:var(--theme-color, #3b82f6);cursor:pointer;white-space:normal;word-break:break-word;}.quick-question.svelte-1ni34yq:hover,
@@ -17821,8 +17821,8 @@ const T2 = {
 
   /* Error banner styles */.error-banner.svelte-1ni34yq {display:flex;align-items:center;justify-content:space-between;gap:0.5rem;padding:0.75rem 1rem;background-color:#fef2f2;border-bottom:1px solid #fecaca;color:#991b1b;font-size:0.875rem;}.error-text.svelte-1ni34yq {flex:1;}.error-dismiss.svelte-1ni34yq {background:none;border:none;color:#991b1b;cursor:pointer;font-size:1rem;padding:0.25rem;line-height:1;opacity:0.7;transition:opacity 0.15s ease;}.error-dismiss.svelte-1ni34yq:hover {opacity:1;}`
 };
-function D2(e, t) {
-  ar(t, !0), gi(e, T2);
+function O2(e, t) {
+  ar(t, !0), gi(e, D2);
   const [n, r] = Yd(), i = () => Gd(Q, "$chatStore", n), s = "fluentBot", u = "https://staging.fluentbot.ai";
   let a = /* @__PURE__ */ Se(""), c = /* @__PURE__ */ Se("What do you want to know?"), d = 0, h = !1, p = null, g = /* @__PURE__ */ Se(!1), _, b, w = /* @__PURE__ */ Se(!1), v = /* @__PURE__ */ Se(!0), E = /* @__PURE__ */ Se(!1), y;
   const S = `fbt_visitor_email_${t.settings.bot_id}`;
@@ -17834,8 +17834,8 @@ function D2(e, t) {
     if (C(_e))
       return document.addEventListener("click", je), () => document.removeEventListener("click", je);
   });
-  let Te = /* @__PURE__ */ Re(() => i().messages), ke = /* @__PURE__ */ Re(() => i().isLoading), tt = /* @__PURE__ */ Re(() => i().hasMore), Bt = /* @__PURE__ */ Re(() => i().chat_id), qe = /* @__PURE__ */ Re(() => i().error);
-  const nt = /* @__PURE__ */ Re(() => C(Te).some((R) => R.role === "human")), Dt = new Intl.DateTimeFormat(void 0, {
+  let Te = /* @__PURE__ */ Me(() => i().messages), ke = /* @__PURE__ */ Me(() => i().isLoading), tt = /* @__PURE__ */ Me(() => i().hasMore), Bt = /* @__PURE__ */ Me(() => i().chat_id), qe = /* @__PURE__ */ Me(() => i().error);
+  const nt = /* @__PURE__ */ Me(() => C(Te).some((R) => R.role === "human")), Dt = new Intl.DateTimeFormat(void 0, {
     month: "short",
     day: "numeric",
     year: "numeric"
@@ -17852,7 +17852,7 @@ function D2(e, t) {
     const B = st(/* @__PURE__ */ new Date()), M = st(R), I = Math.round((B.getTime() - M.getTime()) / (1e3 * 60 * 60 * 24));
     return I === 0 ? "Today" : I === 1 ? "Yesterday" : Dt.format(R);
   };
-  let $e = /* @__PURE__ */ Re(() => {
+  let $e = /* @__PURE__ */ Me(() => {
     const R = [];
     let B = null;
     return C(Te).forEach((M, I) => {
@@ -17867,23 +17867,23 @@ function D2(e, t) {
         message: M
       });
     }), R;
-  }), De = /* @__PURE__ */ Re(() => i().escalationStatus), Kn = /* @__PURE__ */ Re(() => i().currentAgent), Rn = /* @__PURE__ */ Re(() => i().agentTyping), Me = null;
+  }), De = /* @__PURE__ */ Me(() => i().escalationStatus), Kn = /* @__PURE__ */ Me(() => i().currentAgent), Rn = /* @__PURE__ */ Me(() => i().agentTyping), Fe = null;
   en(() => {
     if (!C(qe)) {
-      Me && (clearTimeout(Me), Me = null);
+      Fe && (clearTimeout(Fe), Fe = null);
       return;
     }
-    return Me && (clearTimeout(Me), Me = null), Me = setTimeout(
+    return Fe && (clearTimeout(Fe), Fe = null), Fe = setTimeout(
       () => {
-        Me = null, Ot();
+        Fe = null, Ot();
       },
       5e3
     ), () => {
-      Me && (clearTimeout(Me), Me = null);
+      Fe && (clearTimeout(Fe), Fe = null);
     };
   });
   const Ot = () => {
-    Me && (clearTimeout(Me), Me = null), Q.update((R) => ({ ...R, error: null }));
+    Fe && (clearTimeout(Fe), Fe = null), Q.update((R) => ({ ...R, error: null }));
   }, Zn = () => {
     if (!_) return !0;
     const R = 80, { scrollTop: B, scrollHeight: M, clientHeight: I } = _;
@@ -17994,7 +17994,7 @@ function D2(e, t) {
     } catch {
       H(a, R, !0), await zs(), yn();
     }
-  }, Fe = async () => {
+  }, Oe = async () => {
     const R = C(A).trim();
     if (!R) {
       H(j, "Email is required");
@@ -18015,7 +18015,7 @@ function D2(e, t) {
     }
   }, Le = (R) => {
     R && (H(a, R, !0), be());
-  }, Oe = async () => {
+  }, Re = async () => {
     if (!(C(De) === "pending" || C(De) === "unresolved"))
       try {
         await ep(t.settings.bot_id, C(Bt));
@@ -18023,7 +18023,7 @@ function D2(e, t) {
         console.error("Escalation request failed:", R);
       }
   };
-  var Xe = A2(), ce = G(Xe);
+  var Xe = T2(), ce = G(Xe);
   {
     var Ge = (R) => {
       var B = f2(), M = G(B), I = G(M), $ = ie(M, 2);
@@ -18051,7 +18051,7 @@ function D2(e, t) {
         var Je = p2(), We = ie(G(Je), 2), Ht = G(We);
         de(() => bt(Ht, C(B).label)), W(pe, Je);
       }, he = (pe) => {
-        const Je = /* @__PURE__ */ Re(() => t.settings.escalation_button_text || "Talk to a human");
+        const Je = /* @__PURE__ */ Me(() => t.settings.escalation_button_text || "Talk to a human");
         i2(pe, {
           get message() {
             return C(B).message;
@@ -18080,7 +18080,7 @@ function D2(e, t) {
           get escalationButtonText() {
             return C(Je);
           },
-          onEscalationClick: Oe
+          onEscalationClick: Re
         });
       };
       fe(I, (pe) => {
@@ -18133,10 +18133,12 @@ function D2(e, t) {
   var Mt = ie(Yt, 2);
   {
     var kn = (R) => {
-      var B = v2(), M = G(B), I = ie(G(M), 4), $ = ie(I, 2);
+      var B = x2(), M = G(B), I = ie(G(M), 4);
+      I.__keydown = [_2, P, Oe];
+      var $ = ie(I, 2);
       {
         var he = (Ft) => {
-          var Zt = _2(), Pn = G(Zt);
+          var Zt = v2(), Pn = G(Zt);
           de(() => bt(Pn, C(j))), W(Ft, Zt);
         };
         fe($, (Ft) => {
@@ -18144,7 +18146,7 @@ function D2(e, t) {
         });
       }
       var pe = ie($, 2), Je = G(pe);
-      Je.__click = Fe;
+      Je.__click = Oe;
       var We = G(Je), Ht = ie(Je, 2);
       Ht.__click = [
         l2,
@@ -18161,7 +18163,7 @@ function D2(e, t) {
   var Nn = ie(Mt, 2);
   {
     var In = (R) => {
-      var B = x2();
+      var B = y2();
       B.__click = [d2, T, j], de(() => gt(B, `--theme-color: ${t.settings.primary_color ?? ""}; --theme-soft: ${t.settings.secondary_color ?? ""}`)), W(R, B);
     };
     fe(Nn, (R) => {
@@ -18171,8 +18173,8 @@ function D2(e, t) {
   var ft = ie(Nn, 2), lr = G(ft);
   {
     var Kt = (R) => {
-      var B = E2(), M = G(B);
-      M.__click = [y2, _e];
+      var B = C2(), M = G(B);
+      M.__click = [w2, _e];
       var I = G(M);
       {
         var $ = (We) => {
@@ -18187,11 +18189,11 @@ function D2(e, t) {
       var pe = ie(M, 2);
       {
         var Je = (We) => {
-          var Ht = k2(), Ft = G(Ht);
+          var Ht = E2(), Ft = G(Ht);
           Ft.__click = [
-            w2,
+            k2,
             _e,
-            Oe
+            Re
           ];
           var Zt = G(Ft);
           cl(Zt, { size: 18 });
@@ -18212,7 +18214,7 @@ function D2(e, t) {
   }
   var at = ie(lr, 2);
   at.__input = yn, at.__keydown = [
-    C2,
+    S2,
     g,
     Pe,
     be
@@ -18222,7 +18224,7 @@ function D2(e, t) {
   var z = ie(ft, 2);
   {
     var X = (R) => {
-      var B = S2(), M = ie(G(B));
+      var B = A2(), M = ie(G(B));
       Ke(M, "href", u), M.textContent = s, de(() => gt(M, `color: ${t.settings.primary_color ?? ""}`)), W(R, B);
     };
     fe(z, (R) => {
@@ -18244,9 +18246,9 @@ function D2(e, t) {
     H(g, !1);
   }), pu(at, () => C(a), (R) => H(a, R)), W(e, Xe), cr(), r();
 }
-bi(["click", "input", "keydown"]);
+bi(["click", "keydown", "input"]);
 const uu = "fbt_chat_id", Sa = ["chat_id", "currentChatId"], ou = "fbt_session_token", Aa = "session_token";
-class O2 {
+class R2 {
   settings;
   constructor(t) {
     this.settings = t, Yh(this.resetChat.bind(this));
@@ -18289,9 +18291,9 @@ class O2 {
     Xc(), this.settings.first_message && this.addInitialMessage();
   }
 }
-const R2 = (e, t) => {
+const M2 = (e, t) => {
   t.resetChat();
-}, M2 = (e, t) => {
+}, F2 = (e, t) => {
   if (C(t)) {
     const n = new CustomEvent("minimize-widget");
     document.dispatchEvent(n), H(t, !1);
@@ -18300,8 +18302,8 @@ const R2 = (e, t) => {
     document.dispatchEvent(n), H(t, !0);
   }
 };
-var F2 = /* @__PURE__ */ ae('<img class="logo svelte-nnvbbk" loading="lazy" decoding="async">'), N2 = () => document.dispatchEvent(new CustomEvent("close-widget")), I2 = /* @__PURE__ */ ae('<main class="svelte-nnvbbk"><header class="main-header svelte-nnvbbk"><div class="brand svelte-nnvbbk"><!> <div class="title svelte-nnvbbk"> </div></div> <div class="button-group svelte-nnvbbk"><button class="icon-button svelte-nnvbbk"><!></button> <button class="icon-button reset-mobile svelte-nnvbbk" aria-label="Reset chat"><!></button> <button class="icon-button close-mobile svelte-nnvbbk" aria-label="Close chat"><!></button></div></header> <div class="content svelte-nnvbbk"><!></div></main>');
-const P2 = {
+var N2 = /* @__PURE__ */ ae('<img class="logo svelte-nnvbbk" loading="lazy" decoding="async">'), I2 = () => document.dispatchEvent(new CustomEvent("close-widget")), P2 = /* @__PURE__ */ ae('<main class="svelte-nnvbbk"><header class="main-header svelte-nnvbbk"><div class="brand svelte-nnvbbk"><!> <div class="title svelte-nnvbbk"> </div></div> <div class="button-group svelte-nnvbbk"><button class="icon-button svelte-nnvbbk"><!></button> <button class="icon-button reset-mobile svelte-nnvbbk" aria-label="Reset chat"><!></button> <button class="icon-button close-mobile svelte-nnvbbk" aria-label="Close chat"><!></button></div></header> <div class="content svelte-nnvbbk"><!></div></main>');
+const L2 = {
   hash: "svelte-nnvbbk",
   code: `main.svelte-nnvbbk {height:100vh;display:flex;flex-direction:column;background-color:#f7f7f7; /* gray-50 */overflow:hidden; /* preserve container rounded-corner clipping */}header.svelte-nnvbbk {color:inherit;padding:0.5rem;display:flex;align-items:center;gap:0.5rem;flex-shrink:0;}.main-header.svelte-nnvbbk {color:inherit;padding:0.5rem;display:flex;align-items:center;gap:0.5rem;flex-shrink:0;position:relative; /* ensure tooltips appear above content */z-index:2;}.brand.svelte-nnvbbk {display:flex;align-items:center;gap:0.5rem;min-width:0; /* allow children to truncate */}
 
@@ -18328,17 +18330,17 @@ const P2 = {
 
   /* Keep the right-most tooltip inside the container by aligning it to the right edge of the button */.button-group.svelte-nnvbbk .icon-button:where(.svelte-nnvbbk):last-child::after {left:auto;right:0;transform:translateY(2px);}.content.svelte-nnvbbk {flex:1;overflow:hidden; /* keep scrolling content masked while tooltips can overflow from header */}`
 };
-function L2(e, t) {
-  ar(t, !0), gi(e, P2);
-  const n = new O2(t.settings);
+function B2(e, t) {
+  ar(t, !0), gi(e, L2);
+  const n = new R2(t.settings);
   let r = /* @__PURE__ */ Se(!1);
   Wu(async () => {
     await n.initialize();
   });
-  var i = I2(), s = G(i), u = G(s), a = G(u);
+  var i = P2(), s = G(i), u = G(s), a = G(u);
   {
     var c = (T) => {
-      var P = F2();
+      var P = N2();
       de(() => {
         Ke(P, "src", t.settings.header_logo), Ke(P, "alt", t.settings.title_text ? t.settings.title_text + " logo" : "Logo");
       }), W(T, P);
@@ -18348,7 +18350,7 @@ function L2(e, t) {
     });
   }
   var d = ie(a, 2), h = G(d), p = ie(u, 2), g = G(p);
-  g.__click = [M2, r];
+  g.__click = [F2, r];
   var _ = G(g);
   {
     var b = (T) => {
@@ -18361,15 +18363,15 @@ function L2(e, t) {
     });
   }
   var v = ie(g, 2);
-  v.__click = [R2, n];
+  v.__click = [M2, n];
   var E = G(v);
   mp(E, { size: 16 });
   var y = ie(v, 2);
-  y.__click = [N2];
+  y.__click = [I2];
   var S = G(y);
   Ju(S, { size: 16 });
   var D = ie(s, 2), A = G(D);
-  D2(A, {
+  O2(A, {
     get settings() {
       return t.settings;
     }
@@ -18378,17 +18380,17 @@ function L2(e, t) {
   }), W(e, i), cr();
 }
 bi(["click"]);
-const B2 = "html,body{height:100%;margin:0;overflow:hidden}", q2 = `pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+const q2 = "html,body{height:100%;margin:0;overflow:hidden}", z2 = `pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
   Theme: a11y-light
   Author: @ericwbailey
   Maintainer: @ericwbailey
 
   Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css
 */.hljs{background:#fefefe;color:#545454}.hljs-comment,.hljs-quote{color:#696969}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-deletion{color:#d91e18}.hljs-number,.hljs-built_in,.hljs-literal,.hljs-type,.hljs-params,.hljs-meta,.hljs-link,.hljs-attribute{color:#aa5d00}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:green}.hljs-title,.hljs-section{color:#007faa}.hljs-keyword,.hljs-selector-tag{color:#7928a1}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}@media screen and (-ms-high-contrast: active){.hljs-addition,.hljs-attribute,.hljs-built_in,.hljs-bullet,.hljs-comment,.hljs-link,.hljs-literal,.hljs-meta,.hljs-number,.hljs-params,.hljs-string,.hljs-symbol,.hljs-type,.hljs-quote{color:highlight}.hljs-keyword,.hljs-selector-tag{font-weight:700}}`;
-var z2 = (e, t, n) => {
+var j2 = (e, t, n) => {
   n.onToggle?.();
-}, j2 = /* @__PURE__ */ ae('<div class="close-icon svelte-1ofuhp"><!></div>'), U2 = /* @__PURE__ */ ae('<img alt="Chat Icon" class="icon-image svelte-1ofuhp">'), H2 = /* @__PURE__ */ ae('<span class="button-text svelte-1ofuhp"> </span>'), $2 = /* @__PURE__ */ ae('<div class="chat-icon svelte-1ofuhp"><!></div> <!>', 1), W2 = /* @__PURE__ */ ae('<button id="chat-button"><!></button>');
-const V2 = {
+}, U2 = /* @__PURE__ */ ae('<div class="close-icon svelte-1ofuhp"><!></div>'), H2 = /* @__PURE__ */ ae('<img alt="Chat Icon" class="icon-image svelte-1ofuhp">'), $2 = /* @__PURE__ */ ae('<span class="button-text svelte-1ofuhp"> </span>'), W2 = /* @__PURE__ */ ae('<div class="chat-icon svelte-1ofuhp"><!></div> <!>', 1), V2 = /* @__PURE__ */ ae('<button id="chat-button"><!></button>');
+const G2 = {
   hash: "svelte-1ofuhp",
   code: `#chat-button.svelte-1ofuhp {display:flex;align-items:center;justify-content:center;gap:8px;min-width:3.5rem;height:3.5rem;padding:0;border:none;border-radius:50%;cursor:pointer;box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -18424,7 +18426,7 @@ const V2 = {
   }`
 };
 function Ta(e, t) {
-  ar(t, !0), gi(e, V2);
+  ar(t, !0), gi(e, G2);
   const n = /* @__PURE__ */ Xd(t, ["$$slots", "$$events", "$$legacy"]), r = {
     MessageSquare: Jo,
     MessageSquareMore: lp,
@@ -18435,7 +18437,7 @@ function Ta(e, t) {
     BotMessageSquare: ul,
     Sparkle: ol,
     Sparkles: al
-  }, i = /* @__PURE__ */ Re(() => !!t.buttonIcon && t.buttonIcon.startsWith("https://")), s = /* @__PURE__ */ Re(() => C(i) ? null : r[t.buttonIcon || "MessageSquare"] || Jo);
+  }, i = /* @__PURE__ */ Me(() => !!t.buttonIcon && t.buttonIcon.startsWith("https://")), s = /* @__PURE__ */ Me(() => C(i) ? null : r[t.buttonIcon || "MessageSquare"] || Jo);
   let u = /* @__PURE__ */ Se(24), a = /* @__PURE__ */ Se(1);
   function c() {
     try {
@@ -18446,14 +18448,14 @@ function Ta(e, t) {
     }
   }
   c(), typeof window < "u" && (window.addEventListener("resize", c), en(() => () => window.removeEventListener("resize", c)));
-  var d = W2();
-  d.__click = [z2, n, t];
+  var d = V2();
+  d.__click = [j2, n, t];
   let h;
   var p = G(d);
   {
     var g = (b) => {
-      var w = j2(), v = G(w);
-      const E = /* @__PURE__ */ Re(() => C(u) + 4);
+      var w = U2(), v = G(w);
+      const E = /* @__PURE__ */ Me(() => C(u) + 4);
       Ju(v, {
         get size() {
           return C(E);
@@ -18461,10 +18463,10 @@ function Ta(e, t) {
         strokeWidth: 2
       }), de(() => gt(w, `--icon-scale: ${C(a) ?? ""}; transform: scale(var(--icon-scale));`)), W(b, w);
     }, _ = (b) => {
-      var w = $2(), v = Ie(w), E = G(v);
+      var w = W2(), v = Ie(w), E = G(v);
       {
         var y = (T) => {
-          var P = U2();
+          var P = H2();
           de(() => {
             Ke(P, "src", t.buttonIcon), gt(P, `width: ${C(u) ?? ""}px; height: ${C(u) ?? ""}px;`);
           }), W(T, P);
@@ -18497,7 +18499,7 @@ function Ta(e, t) {
       var D = ie(v, 2);
       {
         var A = (T) => {
-          var P = H2(), j = G(P);
+          var P = $2(), j = G(P);
           de(() => bt(j, t.buttonText)), W(T, P);
         };
         fe(D, (T) => {
@@ -18524,8 +18526,8 @@ function Ta(e, t) {
   ), W(e, d), cr();
 }
 bi(["click"]);
-const Li = "fbt_session_token", au = "session_token", G2 = "fbt_visitor_email_";
-class Y2 {
+const Li = "fbt_session_token", au = "session_token", Y2 = "fbt_visitor_email_";
+class K2 {
   botId;
   container = null;
   buttonContainer = null;
@@ -18548,7 +18550,7 @@ class Y2 {
       const n = new URLSearchParams(), r = localStorage.getItem(Li) || localStorage.getItem(au);
       !localStorage.getItem(Li) && r && (localStorage.setItem(Li, r), localStorage.removeItem(au)), r && n.set("session_token", r), n.set("page_url", window.location.href), n.set("page_title", document.title || window.location.pathname || "Untitled Page");
       const s = (await Nh.get(`/api/bots/${t}/widget-init?${n.toString()}`)).data.data, u = s?.widget_settings ?? null;
-      return s?.session_token && (localStorage.setItem(Li, String(s.session_token)), localStorage.removeItem(au)), typeof s?.visitor_email == "string" && s.visitor_email.trim() !== "" && localStorage.setItem(`${G2}${t}`, s.visitor_email.trim()), u;
+      return s?.session_token && (localStorage.setItem(Li, String(s.session_token)), localStorage.removeItem(au)), typeof s?.visitor_email == "string" && s.visitor_email.trim() !== "" && localStorage.setItem(`${Y2}${t}`, s.visitor_email.trim()), u;
     } catch (n) {
       return console.error("Error fetching widget settings:", n), null;
     }
@@ -18721,8 +18723,8 @@ class Y2 {
                 }
             }
 
+            ${z2}
             ${q2}
-            ${B2}
         `, t;
   }
   async initialize(t) {
@@ -18735,7 +18737,7 @@ class Y2 {
     const r = n.attachShadow({ mode: "open" }), i = document.createElement("div");
     i.id = "fluent-bot-chat-widget";
     const s = document.createElement("div");
-    s.id = "chat-button-container", r.appendChild(this.createStyles()), r.appendChild(i), r.appendChild(s), document.body.appendChild(n), this.container = i, this.buttonContainer = s, document.addEventListener("click", this.clickHandler, !0), document.addEventListener("close-widget", this.closeHandler), document.addEventListener("maximize-widget", this.maximizeHandler), document.addEventListener("minimize-widget", this.minimizeHandler), document.addEventListener("message-feedback", this.feedbackHandler), js(L2, {
+    s.id = "chat-button-container", r.appendChild(this.createStyles()), r.appendChild(i), r.appendChild(s), document.body.appendChild(n), this.container = i, this.buttonContainer = s, document.addEventListener("click", this.clickHandler, !0), document.addEventListener("close-widget", this.closeHandler), document.addEventListener("maximize-widget", this.maximizeHandler), document.addEventListener("minimize-widget", this.minimizeHandler), document.addEventListener("message-feedback", this.feedbackHandler), js(B2, {
       target: i,
       props: {
         settings: this.settings
@@ -18805,13 +18807,13 @@ class Y2 {
     }
   }
 }
-const K2 = () => document.querySelector(
+const Z2 = () => document.querySelector(
   "#fluent-bot-chat-widget-container"
-), g_ = (e) => {
-  K2() || new Y2(e);
+), m_ = (e) => {
+  Z2() || new K2(e);
 };
 export {
-  Y2 as FluentBotChatWidget,
-  g_ as injectWidget
+  K2 as FluentBotChatWidget,
+  m_ as injectWidget
 };
 //# sourceMappingURL=fluent-bot-chat-widget.es.js.map
