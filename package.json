@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fluent-docai/chat-widget-open.git"
+    "url": "git+https://github.com/fluent-docai/chat-widget-staging.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/fluent-docai/chat-widget-open/issues"
+    "url": "https://github.com/fluent-docai/chat-widget-staging/issues"
   },
-  "homepage": "https://github.com/fluent-docai/chat-widget-open#readme"
+  "homepage": "https://github.com/fluent-docai/chat-widget-staging#readme"
 }
