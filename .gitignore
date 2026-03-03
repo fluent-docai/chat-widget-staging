@@ -1,0 +1,9 @@
+.DS_Store
+.venv
+requirements.txt
+server.py
+.vscode
+.windsurf
+.trae
+__pycache__
+node_modules
