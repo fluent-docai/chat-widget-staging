@@ -1,0 +1,26 @@
+{
+  "name": "chat-widget-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fluent-bot-chat-widget.es.js",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^24.2.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fluent-docai/chat-widget-open.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fluent-docai/chat-widget-open/issues"
+  },
+  "homepage": "https://github.com/fluent-docai/chat-widget-open#readme"
+}
