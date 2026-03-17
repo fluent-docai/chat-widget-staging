@@ -1,33 +1,31 @@
-name: Create latest relase
+name: Create Release
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  deploy_widget:
-    name: Deploy chat widget
+  release:
     runs-on: ubuntu-latest
     permissions:
-        contents: write
-
+      contents: write
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js 22
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
-      - name: Install widget dependencies
-        run: npm ci
-
-      - name: Run semantic-release in destination
+      - name: Extract version from commit and create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --debug
-          
+        run: |
+          VERSION=$(git log -1 --pretty=format:"%s" | grep -oP 'release: \Kv[0-9]+\.[0-9]+\.[0-9]+[^ ]*')
+          if [ -z "$VERSION" ]; then
+            echo "No version found in commit message, skipping release"
+            exit 0
+          fi
+          if git rev-parse "$VERSION" >/dev/null 2>&1; then
+            echo "Tag $VERSION already exists, skipping"
+            exit 0
+          fi
+          gh release create "$VERSION" --generate-notes --title "$VERSION"
+          echo "Created release $VERSION"
